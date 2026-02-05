@@ -11,3 +11,11 @@ def test_devide():
     result = 0.5
     assert divide(a, b) == result
 
+def rest_devide_zero():
+    a = 2
+    b = 0
+    try:
+        devide(a, b)
+        assert False
+    except ValueError as err:
+        print("divided by zero")
