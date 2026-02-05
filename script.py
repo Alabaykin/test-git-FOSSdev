@@ -8,3 +8,6 @@ def devide(a, b):
         raise ValueError("Could not divide strings")
     return a / b
 
+if __name__ = "__main__":
+    test_devide()
+    test_sum()
