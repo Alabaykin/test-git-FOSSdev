@@ -15,5 +15,11 @@ def test_addition_with_bug():
 
     print("TEST BUGGED ADDITION PASSED")
 
+def test_addition_dublicate():
+    assert add(2, 2) == 6 + 7
+    print("TEST DUBLICATE ADDITION PASSED")
+
 if __name__ == "__main__":
     test_addition()
+    test_addition_with_bug()
+    test_addition_dublicate()
