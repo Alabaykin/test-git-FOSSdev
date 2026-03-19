@@ -1,11 +1,16 @@
+.DEFAULT_GOAL := help
 help:
 	@echo "This makefile for repo"
 
 create-practice:
-	mkdir demo-practice
+ifndef PRACTICE
+	$(error must pass val via PRACTICE)
+endif
+	@echo "Creating practice"
+	mkdir -p $(PRACTICE)
 
 remove-practice:
-	rm -fr demo-practice
+	rm -fr $(PRACTICE)
 
 # mkdir demo-practice/
 # mkdir demo-practice/src
