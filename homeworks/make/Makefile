@@ -4,3 +4,9 @@ PIP = $(VENV)/bin/pip
 
 $(VENV):
 	python3 -m venv $(VENV)
+	
+install: $(VENV)
+	$(PIP) install -r requirements.txt
+
+run: install
+	$(PYTHON) src/app.py
