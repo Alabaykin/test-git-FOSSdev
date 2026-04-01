@@ -12,4 +12,4 @@ run: install
 	$(PYTHON) src/app.py
 
 check-requirements: install
-	$(VENV)/bin/pip-missing-reqs --ignore-module=app src/
+	$(VENV)/bin/deptry src/
