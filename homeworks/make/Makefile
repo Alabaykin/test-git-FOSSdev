@@ -16,3 +16,6 @@ check-requirements: install
 
 typecheck: install
 	$(VENV)/bin/mypy src/
+
+lint: install
+	$(VENV)/bin/flake8 src/
