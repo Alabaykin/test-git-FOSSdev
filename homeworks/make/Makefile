@@ -13,3 +13,6 @@ run: install
 
 check-requirements: install
 	$(VENV)/bin/deptry src/
+
+typecheck: install
+	$(VENV)/bin/mypy src/
