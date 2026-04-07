@@ -3,7 +3,8 @@ def add(a: int, b: int) -> int:
         raise TypeError("Arguments must to be integer")
     return a + b
 
+
 try:
-    result = add(2, "3")
+    result = add(2, 3)
 except TypeError as e:
     print(f"Error: {e}")
