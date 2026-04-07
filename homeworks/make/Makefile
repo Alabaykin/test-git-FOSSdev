@@ -19,3 +19,5 @@ typecheck: install
 
 lint: install
 	$(VENV)/bin/flake8 src/
+
+check: lint typecheck check-requirements
