@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" version="29.2.4">
   <diagram name="Page-1" id="npK83yPxPT_SsUSf0WdG">
-    <mxGraphModel dx="856" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1273" dy="564" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -27,16 +27,6 @@
             </Array>
             <mxPoint x="520" y="420" as="sourcePoint" />
             <mxPoint x="570" y="370" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Jnf17zK51z08q8LN9spj-11" edge="1" parent="1" source="Jnf17zK51z08q8LN9spj-6" style="curved=1;endArrow=none;html=1;rounded=0;entryX=0.192;entryY=0.305;entryDx=0;entryDy=0;exitX=0.41;exitY=0.994;exitDx=0;exitDy=0;exitPerimeter=0;endFill=0;startArrow=classic;startFill=1;entryPerimeter=0;fontSize=18;" target="Jnf17zK51z08q8LN9spj-5" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <Array as="points">
-              <mxPoint x="205" y="210" />
-              <mxPoint x="275" y="220" />
-            </Array>
-            <mxPoint x="200" y="170" as="sourcePoint" />
-            <mxPoint x="325" y="238" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="Jnf17zK51z08q8LN9spj-12" edge="1" parent="1" source="Jnf17zK51z08q8LN9spj-7" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.826;entryY=0.323;entryDx=0;entryDy=0;exitX=0.572;exitY=1.003;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;fontSize=18;" target="Jnf17zK51z08q8LN9spj-5" value="">
@@ -87,6 +77,24 @@
             <mxPoint x="355" y="320" as="sourcePoint" />
             <mxPoint x="230" y="378" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="_Jp2f150XFhJBqW6Xyzx-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="File, Email" vertex="1">
+          <mxGeometry height="50" width="70" x="260" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_Jp2f150XFhJBqW6Xyzx-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="File request" vertex="1">
+          <mxGeometry height="30" width="70" x="490" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="_Jp2f150XFhJBqW6Xyzx-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Notification Request" vertex="1">
+          <mxGeometry height="40" width="70" x="490" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="_Jp2f150XFhJBqW6Xyzx-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Email" vertex="1">
+          <mxGeometry height="30" width="60" x="600" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_Jp2f150XFhJBqW6Xyzx-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="File, ID" vertex="1">
+          <mxGeometry height="30" width="60" x="210" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="_Jp2f150XFhJBqW6Xyzx-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Space Usage Alarm" vertex="1">
+          <mxGeometry height="50" width="70" x="290" y="350" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
