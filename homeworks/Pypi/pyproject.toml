@@ -31,7 +31,7 @@ dev = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Alabaykin/test-git-FOSSdev"
+Repository = "https://github.com/Alabaykin/test-git-FOSSdev/tree/PypiHW/homeworks/Pypi"
 
 [tool.deptry.per_rule_ignores]
 DEP002 = ["pytest", "mypy", "flake8", "deptry", "build", "twine"]
