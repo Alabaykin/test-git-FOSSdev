@@ -4,7 +4,7 @@ PYTHON = $(PYTHON_BIN)/python
 PIP = $(PYTHON_BIN)/pip
 
 $(VENV):
-	python -m venv $(VENV)
+	python3 -m venv $(VENV) || python -m venv $(VENV)
 
 install: $(VENV)
 	$(PIP) install --upgrade pip
