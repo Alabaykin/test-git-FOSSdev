@@ -26,3 +26,10 @@ check: lint typecheck check-requirements test
 
 build: install
 	$(PYTHON) -m build
+
+docs:
+	@echo "Documentation is provided in README.md"
+
+publish: build
+	$(PYTHON_BIN)/twine check dist/*
+	$(PYTHON_BIN)/twine upload --repository testpypi dist/*
