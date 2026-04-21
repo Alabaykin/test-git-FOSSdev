@@ -23,3 +23,6 @@ lint: install
 	$(PYTHON_BIN)/flake8 src/
 
 check: lint typecheck check-requirements test
+
+build: install
+	$(PYTHON) -m build
