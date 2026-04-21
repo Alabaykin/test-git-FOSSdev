@@ -1,24 +1,25 @@
 VENV = .venv
-PYTHON = $(VENV)/bin/python3
-PIP = $(VENV)/bin/pip
+PYTHON_BIN = $(if $(wildcard $(VENV)/Scripts/python.exe),$(VENV)/Scripts,$(VENV)/bin)
+PYTHON = $(PYTHON_BIN)/python
+PIP = $(PYTHON_BIN)/pip
 
 $(VENV):
-	python3 -m venv $(VENV)
+	python -m venv $(VENV)
 
 install: $(VENV)
-	$(PIP) install -r requirements.txt
-	$(PIP) install deptry mypy flake8
+	$(PIP) install --upgrade pip
+	$(PIP) install -e .[dev]
 
-run: install
-	$(PYTHON) src/app.py
+test: install
+	$(PYTHON) -m pytest tests/
 
 check-requirements: install
-	$(VENV)/bin/deptry src/
+	$(PYTHON_BIN)/deptry src/
 
 typecheck: install
-	$(VENV)/bin/mypy src/
+	$(PYTHON_BIN)/mypy src/
 
 lint: install
-	$(VENV)/bin/flake8 src/
+	$(PYTHON_BIN)/flake8 src/
 
-check: lint typecheck check-requirements
+check: lint typecheck check-requirements test
