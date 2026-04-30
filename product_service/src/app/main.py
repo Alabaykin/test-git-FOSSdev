@@ -1,86 +1,52 @@
-import os
-
-import httpx
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 
-app = FastAPI(title="Order Service")
+app = FastAPI(title="Product Service")
 
 
-PRODUCT_SERVICE_URL = os.getenv(
-    "PRODUCT_SERVICE_URL",
-    "http://127.0.0.1:8001",
-)
-
-
-class OrderRequest(BaseModel):
-    product_id: str
-    quantity: int = Field(gt=0)
-
-
-class OrderResponse(BaseModel):
-    product_id: str
-    quantity: int
-    unit_price: float
-    total: float
-
-
-class ProductFromService(BaseModel):
+class Product(BaseModel):
     id: str
     name: str
     price: float
     available: bool
 
 
+PRODUCTS: dict[str, Product] = {
+    "pencil": Product(
+        id="pencil",
+        name="Pencil",
+        price=1.50,
+        available=True,
+    ),
+    "notebook": Product(
+        id="notebook",
+        name="Notebook",
+        price=4.20,
+        available=True,
+    ),
+    "backpack": Product(
+        id="backpack",
+        name="Backpack",
+        price=35.00,
+        available=False,
+    ),
+}
+
+
 @app.get("/health")
 def health() -> dict[str, str]:
-    return {"status": "ok", "service": "order-service"}
+    return {"status": "ok", "service": "product-service"}
 
 
-@app.post("/orders", response_model=OrderResponse)
-async def create_order(order: OrderRequest) -> OrderResponse:
-    product = await fetch_product(order.product_id)
+@app.get("/products/{product_id}", response_model=Product)
+def get_product(product_id: str) -> Product:
+    product = PRODUCTS.get(product_id)
 
-    if not product.available:
-        raise HTTPException(
-            status_code=400,
-            detail=f"Product '{order.product_id}' is not available",
-        )
-
-    total = product.price * order.quantity
-
-    return OrderResponse(
-        product_id=product.id,
-        quantity=order.quantity,
-        unit_price=product.price,
-        total=total,
-    )
-
-
-async def fetch_product(product_id: str) -> ProductFromService:
-    url = f"{PRODUCT_SERVICE_URL}/products/{product_id}"
-
-    try:
-        async with httpx.AsyncClient(timeout=3.0) as client:
-            response = await client.get(url)
-
-    except httpx.RequestError as exc:
-        raise HTTPException(
-            status_code=503,
-            detail=f"Product service is unavailable: {exc}",
-        ) from exc
-
-    if response.status_code == 404:
+    if product is None:
         raise HTTPException(
             status_code=404,
             detail=f"Product '{product_id}' was not found",
         )
 
-    if response.status_code >= 400:
-        raise HTTPException(
-            status_code=502,
-            detail="Product service returned an unexpected error",
-        )
-
-    return ProductFromService.model_validate(response.json())
+    return product
